@@ -1,0 +1,218 @@
+* { /* Seletor global (*) */
+    padding: 0;
+    font-family: Trebuchet MS, 'Constantia', monospace;
+}
+/* CSS Grid - para estruturar a seção "Serviços"*/
+.container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.home{
+    position: relative;
+    min-height: 70vh;
+    
+    background-image: url("Banner-.png");
+    background-size: cover;  
+    background-position:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.home h1{
+    font-size: 3rem;
+}
+
+.home h2{
+    font-size: 2rem;
+}
+
+.sobre{
+
+    padding:70px 50px;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    text-align: center;
+    display: flex;
+    gap: 20px;   
+}
+
+/* Flexbox */
+body {
+    background-color: rgb(45, 129, 255);
+    margin:0; /* Assim, "zera" as laterais e  */
+    flex-direction: column; /* column, deixa na ordem certa o Header, Main e Footer */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario {
+  background-color: rgba(127, 153, 202, 0.637);
+  margin: auto;
+  justify-content: center;
+  margin-top: 40px;
+  gap:15px;
+  padding: 50px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.depoimentos {
+    padding:70px 50px;    
+}
+
+.depoimento{
+    position:absolute;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .8s ease;
+    background-color: rgba(255, 255, 255, 0.733); /* transparencia */
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+    margin: auto; 
+}
+
+.depoimento.ativo{
+    opacity: 1;
+    visibility:visible; 
+}
+
+.contato{
+    margin-top: 40px;
+}
+
+body.dark {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.button-Tema {
+    position: absolute; /* Com essa configuração, e os dois de baixo, faz manter o botão no topo direito, acima do banner */
+    top: 20px;
+    right: 20px;
+    color: rgb(0, 0, 87);
+    background-color: #a6a9d8;
+    box-shadow: 0px 0px 20px 5px rgba(0, 26, 255, 0.7); /* efeito de sombra em volta do botão Tema */
+    width: 5%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;    
+}
+
+/* Layouts Fluidos */
+
+/* Largura */
+.botao-responsivo {
+    width: 20%; /* Largura */
+    font-size: 1em; /* Tamanho da fonte relativo ao elemento pai */
+    padding: 0.5em 0.5em; /* Espaçamento relativo ao tamanho da fonte */
+    background: #3053ff;
+    background: radial-gradient(circle, rgba(48, 83, 255, 1) 0%, rgba(175, 221, 237, 1) 100%);
+    color: rgb(220, 245, 245);
+    cursor: pointer;
+    border: none;
+    border-radius: 100xp;
+}
+
+/* Barra de rolagem da página */
+body::-webkit-scrollbar {
+  width: 13px;               /* largura de toda a barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(0, 1, 78);  /* cor do "fundo" da barra */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* cor do scroll */
+  border-radius: 20px;  
+  border: 3px solid rgb(151, 208, 255);  /* cor das bordas do scroll thumb */
+}
+
+footer {
+    align-items: flex-end;
+    text-align: center;
+    padding: 8px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.mobile-message {
+    display: none;
+}
+/* RESPONSIVIDADE */
+/* Acima, é o CSS do "geral", nos @media, ficam as definições apenas do que "quebra" quando a tela diminui */
+
+@media (max-width: 600px) { /* Dispositivos pequenos (celulares, até 600px) */
+    body {
+        background-color: blueviolet;
+    }
+    .home h1{
+        font-size:2.2rem;
+    }
+    .home h2{
+
+        font-size: 1.5rem;
+    }
+    main {
+        width: 95%;
+        padding: 0.0625rem;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+    }    
+
+    .mobile-message {
+        display: block;
+        color: chocolate;
+        font-style: italic;
+    }
+}
+
+@media(min-width:601px) and (max-width:900px){  /* Tablet */
+
+    .home h1{
+
+        font-size:3rem;
+    }
+    .home h2{
+
+        font-size:2rem;
+    }
+
+}
+
+
+/* Imagens responsivas (src e srcset) */
+/* Ex: srcset="imagem-pequena.jpg 600W, " */
+
+
