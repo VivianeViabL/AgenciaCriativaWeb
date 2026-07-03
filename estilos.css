@@ -2,15 +2,13 @@
     padding: 0;
     font-family: Trebuchet MS, 'Constantia', monospace;
 }
-/* CSS Grid - para estruturar a seção "Serviços"*/
+
+/* Lista dos serviços */
 .container {
-    display: grid;
-    grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
 }
 
 .home{
@@ -57,7 +55,7 @@ main {
 /* Flexbox */
 body {
     background-color: rgb(45, 129, 255);
-    margin:0; /* Assim, "zera" as laterais e  */
+    margin:0; /* Assim, "zera" as laterais e o topo  */
     flex-direction: column; /* column, deixa na ordem certa o Header, Main e Footer */
     justify-content: center;
     align-items: center;
@@ -66,7 +64,7 @@ body {
 
 .formulario {
   background-color: rgba(127, 153, 202, 0.637);
-  margin: auto;
+  margin: auto; /* faz ficar centralizado na página  */
   justify-content: center;
   margin-top: 40px;
   gap:15px;
@@ -82,13 +80,9 @@ body {
 }
 
 .depoimento{
-    position:absolute;
-
-    opacity:0;
-
-    visibility:hidden;
-
     transition:opacity .8s ease;
+    opacity:0;
+    display:none; 
     background-color: rgba(255, 255, 255, 0.733); /* transparencia */
     width: 100%;
     max-width: 900px;
@@ -100,12 +94,33 @@ body {
 
 .depoimento.ativo{
     opacity: 1;
-    visibility:visible; 
+    display:block;
 }
 
 .contato{
     margin-top: 40px;
 }
+
+/* CSS Grid - para estruturar os serviços */
+/*     display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;  */
+.servico{
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
 
 body.dark {
     background-color: #1f1f1f;
@@ -129,7 +144,6 @@ body.dark {
 
 /* Layouts Fluidos */
 
-/* Largura */
 .botao-responsivo {
     width: 20%; /* Largura */
     font-size: 1em; /* Tamanho da fonte relativo ao elemento pai */
@@ -187,10 +201,19 @@ footer {
         padding: 0.0625rem;
     }
 
-    .container{
+    .container{  /* Seção de serviços */
         grid-template-columns:1fr;
     }    
 
+    @media(max-width:768px){
+
+    .servico{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
     .mobile-message {
         display: block;
         color: chocolate;
