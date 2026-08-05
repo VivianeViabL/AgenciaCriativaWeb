@@ -11,9 +11,25 @@
     <header> <!-- Cabeçalho -->
         <!-- <img src="logo-.jpg" alt="IdeiasFix_Desing"> -->
     <section class="home"> <!-- Home -->
+        <picture class="home__imagem" aria-hidden="true">
+            <source
+                media="(max-width: 600px)"
+                srcset="Banner-.png"
+                sizes="100vw">
+            <source
+                media="(max-width: 900px)"
+                srcset="Banner--.png"
+                sizes="100vw">
+            <!-- img, para garantir a imagem caso o navegador não reconheça o "picture" -->
+            <img 
+                src="Banner--.png"
+                srcset="Banner-.png 1300w, Banner--.png 1500w"
+                sizes="100vw"
+                alt=""> 
+        </picture>
         <button class="button-Tema" id="botaoTema">☀︎</button>
         <h1>Transformamos ideias em experiências visuais memoráveis</h1>
-        <h2>Da criação do logotipo ao desenvolvimento do site, ajudamos sua marca a conquistar mais visibilidade e credibilidade.</h2> <!-- Banner? -->
+        <h2>Da criação do logotipo ao desenvolvimento do site, ajudamos sua marca a conquistar mais visibilidade e credibilidade.</h2> <!-- Banner -->
     </section>
     <section class="sobre"> <!-- Sobre -->
          <h2><p>Sobre Nós ❈</p></h2>
@@ -60,16 +76,22 @@ Acreditamos que o design vai muito além da estética, ele é uma ferramenta cap
             </ul>
         </div> 
         <div class="servicos">
-                <section id="des-web">
-
+                <section class="servico" id="des-web">
+                    <img src="DesenvWeb-.png" alt="Ilustração de desenvolvimento web" loading="lazy" width="800" height="800">
+                    <h2>Desenvolvimento Web</h2>
+                    <p>Sites responsivos e funcionais para apresentar sua marca em qualquer tela.</p>
                 </section>
 
-                <section id="logos">
-
+                <section class="servico" id="logos">
+                    <img src="LogosPers.png" alt="Exemplo de logos personalizados" loading="lazy" width="800" height="800">
+                    <h2>Logos Personalizados</h2>
+                    <p>Identidades visuais pensadas para tornar sua marca reconhecível.</p>
                 </section>
 
-                <section id="des-graf">
-
+                <section class="servico" id="des-graf">
+                    <img src="DesenvGraf-.png" alt="Ilustração de design gráfico" loading="lazy" width="800" height="800">
+                    <h2>Design Gráfico</h2>
+                    <p>Peças gráficas que comunicam a sua mensagem com criatividade.</p>
                 </section>
         </div>
 
