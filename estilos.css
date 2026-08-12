@@ -4,6 +4,34 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    position: sticky; /* fixa */
+    top: 0;
+    z-index: 100; /* esse faz o menu superior sobrepor o banner (home) */
+    background-color: rgb(0, 4, 56);
+    display: flex;
+    justify-content: center;
+    padding: 1.5px;   
+}
+
+.navbar__logo img {
+    width: 100px;
+    height: auto;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar__link {
+    color: white;
+    padding: 2rem 2rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* Lista dos serviços */
 .container {
     display:flex;
@@ -99,7 +127,7 @@ body {
     padding:70px 50px;    
 }
 
-.depoimento{
+.depoimentos__depoimento{
     transition:opacity .8s ease;
     opacity:0;
     display:none; 
@@ -112,7 +140,7 @@ body {
     margin: auto; 
 }
 
-.depoimento.ativo{
+.depoimentos__depoimento--ativo{
     opacity: 1;
     display:block;
 }
@@ -236,6 +264,22 @@ footer {
 
         font-size: 1.5rem;
     }
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+    }
+
+    .navbar__list a {
+        font-size: 13px;
+    }
+
     main {
         width: 95%;
         padding: 0.0625rem;
@@ -261,7 +305,7 @@ footer {
         padding: 40px 20px;
     }
 
-    .depoimento,
+    .depoimentos__depoimento,
     .formulario {
         width: calc(100% - 32px);
         padding: 24px;
@@ -281,12 +325,22 @@ footer {
 @media(min-width:601px) and (max-width:900px){  /* Tablet */
 
     .home h1{
-
         font-size:3rem;
     }
     .home h2{
-
         font-size:2rem;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar__list {
+        gap: 25px;
+    }
+
+    .navbar__list a {
+        font-size: 14px;
     }
 
     .servicos {

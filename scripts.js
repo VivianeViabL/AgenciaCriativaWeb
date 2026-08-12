@@ -1,6 +1,6 @@
 class Depoimentos {
     constructor() {
-        this.depoimentos = document.querySelectorAll(".depoimento");
+        this.depoimentos = document.querySelectorAll(".depoimentos__depoimento");
         this.indiceAtual = 0;
     }
 
@@ -11,19 +11,19 @@ class Depoimentos {
     }
 
     proximo() {
-        this.depoimentos[this.indiceAtual].classList.remove("ativo");
+        this.depoimentos[this.indiceAtual].classList.remove("depoimentos__depoimento--ativo");
 
         this.indiceAtual++;
 
         if(this.indiceAtual >= this.depoimentos.length) {
             this.indiceAtual = 0; // faz um "looping"
         }
-        this.depoimentos[this.indiceAtual].classList.add("ativo"); 
+        this.depoimentos[this.indiceAtual].classList.add("depoimentos__depoimento--ativo"); 
     }
 }
 
 // Instanciando
-const carrossel = new Depoimentos(".depoimento", 5000); // Recebe o tempo de transição como parâmetro
+const carrossel = new Depoimentos(".depoimentos__depoimento", 5000); // Recebe o tempo de transição como parâmetro
 
 carrossel.iniciar();
 

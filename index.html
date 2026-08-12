@@ -9,6 +9,19 @@
 </head>
 <body>
     <header> <!-- Cabeçalho -->
+        <section class="navbar"> <a href="#" class="navbar__logo"> <img src="logo-.jpg" alt="IdeiasFix Design"> </a>
+            <ul class="navbar__list">
+                <li class="navbar__item"> <a class="navbar__link" href="#sobre">Sobre Nós</a> </li>
+
+                <li class="navbar__item"> <a class="navbar__link" href="#servicos">Nossos Serviços</a> </li>
+
+                <li class="navbar__item"> <a class="navbar__link" href="#depoimentos">Depoimentos</a> </li>
+
+                <li class="navbar__item"> <a class="navbar__link" href="#contato">Contatos</a> </li>
+
+                <li class="navbar__item"> <a class="navbar__link" href="#orcamento">Orçamento</a> </li>
+            </ul>
+        </section>
         <!-- <img src="logo-.jpg" alt="IdeiasFix_Desing"> -->
     <section class="home"> <!-- Home -->
         <picture class="home__imagem" aria-hidden="true">
@@ -31,12 +44,12 @@
         <h1>Transformamos ideias em experiências visuais memoráveis</h1>
         <h2>Da criação do logotipo ao desenvolvimento do site, ajudamos sua marca a conquistar mais visibilidade e credibilidade.</h2> <!-- Banner -->
     </section>
-    <section class="sobre"> <!-- Sobre -->
-         <h2><p>Sobre Nós ❈</p></h2>
+    <section id="sobre" class="sobre"> <!-- Sobre -->
+         <h2><p>❈ Sobre Nós ❈</p></h2>
          <h3>Somos uma agência especializada na criação de identidades visuais e soluções digitais para empresas e profissionais que desejam fortalecer sua presença no mercado.
 Acreditamos que o design vai muito além da estética, ele é uma ferramenta capaz de transmitir valores, gerar conexão com o público e destacar marcas em um ambiente cada vez mais competitivo. Por isso, cada projeto é desenvolvido com atenção aos detalhes, buscando unir criatividade, funcionalidade e resultados.</h3>
     </section>
-    <section class="container"> <!-- Serviços -->
+    <section id="servicos" class="container"> <!-- Serviços -->
         <h1>Nossos Serviços</h1>
         <nav> <!-- Navegação -->
             <ul>
@@ -46,25 +59,25 @@ Acreditamos que o design vai muito além da estética, ele é uma ferramenta cap
             </ul>
         </nav>
     </section>    
-    <section class="depoimentos">
+    <section id="depoimentos" class="depoimentos">
          <h2><p>Depoimentos</p></h2>
-            <div class="depoimento ativo">
+            <div class="depoimentos__depoimento depoimentos__depoimento--ativo">
                 <h4>Ivy Soares - ⭐⭐⭐⭐⭐</h4>
                 <p>Agência incrível! Atendeu todas as minhas necessidades para a melhoria do meu site, e de fato notei um resultado positivo na visualização e busca pelo meu negócio!</p>
             </div>
 
-            <div class="depoimento">
+            <div class="depoimentos__depoimento">
                 <h4>Taki Nines - ⭐⭐⭐⭐⭐</h4>
                 <p>Tive uma ótima experiência com essa agência, entregaram um trabalho impecável e dentro de um prazo satisfatório! Muito atenciosos, super recomendo.</p>
             </div>
 
-            <div class="depoimento">
+            <div class="depoimentos__depoimento">
                 <h4>Yoshi Arantes - ⭐⭐⭐⭐⭐</h4>
                 <p>Trabalho impecável, comprometidos e cuidadosos nas demandas. Recomendo demais a IdeiasFix Desing!</p>
             </div>
     </section>
     <section> 
-        <div class="contato">
+        <div id="contato" class="contato">
             <h2><p>Contatos</p></h2>
             <ul>
                 <h4>📍 Endereço</h4>
@@ -95,7 +108,7 @@ Acreditamos que o design vai muito além da estética, ele é uma ferramenta cap
                 </section>
         </div>
 
-        <div class="formulario">
+        <div id="orcamento" class="formulario">
                 <h2>Solicite um orçamento</h2>
                 <p></p>  
                 <form action="index.html" method="get">  
