@@ -1,13 +1,17 @@
 class Depoimentos {
-    constructor() {
-        this.depoimentos = document.querySelectorAll(".depoimentos__depoimento");
+
+    constructor(seletor, intervalo) {
+        this.depoimentos = document.querySelectorAll(seletor);
         this.indiceAtual = 0;
+        this.intervalo = intervalo;
     }
 
     iniciar() {
+
         setInterval(() => {
             this.proximo();
-        }, 5000); // tempo do intervalo
+        }, this.intervalo);
+
     }
 
     proximo() {
@@ -29,8 +33,8 @@ carrossel.iniciar();
 
 class Tema {
     constructor() {
-        this.botaoTema = document.getElementById("botaoTema");
-        this.botaoTema.addEventListener("click", ()=> {
+        this.buttonTema = document.getElementById("buttonTema");
+        this.buttonTema.addEventListener("click", ()=> {
         //Verificar se o usuário já tem um tema pré-definido
         const temaAtual = localStorage.getItem("tema");
         //Verificar qual é o tema e inverter
@@ -42,7 +46,7 @@ class Tema {
         //Salvar as preferências no LocalStorage
         localStorage.setItem("tema", novoTema);
         //Atualiza o texto do botão
-        this.botaoTema.textContent = novoTema === "dark" ? '☀︎' : '☽';
+        this.buttonTema.textContent = novoTema === "dark" ? '☀︎' : '☽';
     })
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -51,9 +55,9 @@ class Tema {
         
         document.body.classList.add(temaSalvo);
 
-        this.botaoTema.textContent = temaSalvo === "dark" ? '☀︎' : '☽';
+        this.buttonTema.textContent = temaSalvo === "dark" ? '☀︎' : '☽';
     })
     }
 }
 
-const botaoTema = new Tema();
+const buttonTema = new Tema();

@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+/* Flexbox */
+body {
+    background-color: rgb(45, 129, 255);
+    margin:0; /* Assim, "zera" as laterais e o topo  */
+    flex-direction: column; /* column, deixa na ordem certa o Header, Main e Footer */
+    min-height: 100vh;
+}
+
 .navbar {
     position: sticky; /* fixa */
     top: 0;
@@ -33,13 +41,22 @@
 }
 
 /* Lista dos serviços */
-.container {
+.container-servicos {
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:25px;
 }
 
+.servicos-list a {
+    color: rgb(4, 2, 88);
+    font-size: 20px;
+    padding: 3rem 3rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Banner */
 .home{
     position: relative;
     min-height: 70vh;
@@ -83,34 +100,12 @@
     font-size: 2rem;
 }
 
-.sobre{
-
-    padding:70px 50px;
-}
-
 header {
     grid-area: header;
     text-align: center;
 }
 
-main {
-    grid-area: main;
-    text-align: center;
-    display: flex;
-    gap: 20px;   
-}
-
-/* Flexbox */
-body {
-    background-color: rgb(45, 129, 255);
-    margin:0; /* Assim, "zera" as laterais e o topo  */
-    flex-direction: column; /* column, deixa na ordem certa o Header, Main e Footer */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.formulario {
+.orcamento {
   background-color: rgba(127, 153, 202, 0.637);
   margin: auto; /* faz ficar centralizado na página  */
   justify-content: center;
@@ -123,8 +118,9 @@ body {
 
 }
 
+.sobre,
 .depoimentos {
-    padding:70px 50px;    
+    padding: 70px 50px;
 }
 
 .depoimentos__depoimento{
@@ -148,7 +144,6 @@ body {
 .contato{
     margin-top: 40px;
 }
-
 /* CSS Grid - para estruturar os serviços */
 /*     display: grid;
     grid-template-areas:
@@ -166,7 +161,7 @@ body {
     padding: 0 24px;
 }
 
-.servico {
+.servicos__card {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -175,7 +170,7 @@ body {
     background-color: rgba(255, 255, 255, 0.18);
 }
 
-.servico img {
+.servicos__card img {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
@@ -184,7 +179,7 @@ body {
     border-radius: 8px;
 }
 
-.formulario textarea {
+.orcamento textarea {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -198,7 +193,7 @@ body.dark {
     color: white;
 }
 
-.button-Tema {
+.home__botao-tema {
     position: absolute; /* Com essa configuração, e os dois de baixo, faz manter o botão no topo direito, acima do banner */
     top: 20px;
     right: 20px;
@@ -215,7 +210,7 @@ body.dark {
 
 /* Layouts Fluidos */
 
-.botao-responsivo {
+.button-responsivo {
     width: 20%; /* Largura */
     font-size: 1em; /* Tamanho da fonte relativo ao elemento pai */
     padding: 0.5em 0.5em; /* Espaçamento relativo ao tamanho da fonte */
@@ -224,7 +219,7 @@ body.dark {
     color: rgb(220, 245, 245);
     cursor: pointer;
     border: none;
-    border-radius: 100xp;
+    border-radius: 100px;
 }
 
 /* Barra de rolagem da página */
@@ -250,9 +245,6 @@ footer {
     font-weight: bold;
 }
 
-.mobile-message {
-    display: none;
-}
 /* RESPONSIVIDADE */
 /* Acima, é o CSS do "geral", nos @media, ficam as definições apenas do que "quebra" quando a tela diminui */
 
@@ -265,7 +257,7 @@ footer {
         font-size: 1.5rem;
     }
     .navbar {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* "wrap" permite a quebra de linha caso o conteúdo passe da largura máxima */
         justify-content: center;
     }
 
@@ -280,16 +272,11 @@ footer {
         font-size: 13px;
     }
 
-    main {
-        width: 95%;
-        padding: 0.0625rem;
-    }
-
-    .container{  /* Seção de serviços */
+    .container-servicos{  /* Seção de serviços */
         gap: 16px;
     }
 
-    .container nav ul,
+    .container-servicos nav ul,
     .servicos {
         display: grid;
         grid-template-columns: 1fr;
@@ -306,17 +293,17 @@ footer {
     }
 
     .depoimentos__depoimento,
-    .formulario {
+    .orcamento {
         width: calc(100% - 32px);
         padding: 24px;
     }
 
-    .formulario textarea {
+    .orcamento textarea {
         width: 100%;
     }
 
-    .botao-responsivo,
-    .button-Tema {
+    .button-responsivo,
+    .home__botao-tema {
         width: auto;
     }
 
@@ -349,11 +336,11 @@ footer {
         padding: 0 32px;
     }
 
-    .servico {
+    .servicos__card {
         flex-direction: column;
     }
 
-    .formulario {
+    .orcamento {
         width: min(90%, 600px);
     }
 

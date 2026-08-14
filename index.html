@@ -40,27 +40,27 @@
                 sizes="100vw"
                 alt=""> 
         </picture>
-        <button class="button-Tema" id="botaoTema">☀︎</button>
+        <button class="home__botao-tema" id="buttonTema">☀︎</button>
         <h1>Transformamos ideias em experiências visuais memoráveis</h1>
         <h2>Da criação do logotipo ao desenvolvimento do site, ajudamos sua marca a conquistar mais visibilidade e credibilidade.</h2> <!-- Banner -->
     </section>
     <section id="sobre" class="sobre"> <!-- Sobre -->
-         <h2><p>❈ Sobre Nós ❈</p></h2>
+         <h2>❈ Sobre Nós ❈</h2>
          <h3>Somos uma agência especializada na criação de identidades visuais e soluções digitais para empresas e profissionais que desejam fortalecer sua presença no mercado.
 Acreditamos que o design vai muito além da estética, ele é uma ferramenta capaz de transmitir valores, gerar conexão com o público e destacar marcas em um ambiente cada vez mais competitivo. Por isso, cada projeto é desenvolvido com atenção aos detalhes, buscando unir criatividade, funcionalidade e resultados.</h3>
     </section>
-    <section id="servicos" class="container"> <!-- Serviços -->
+    <section id="servicos" class="container-servicos"> <!-- Serviços -->
         <h1>Nossos Serviços</h1>
         <nav> <!-- Navegação -->
-            <ul>
-                <p><a href="#des-web">🖥 Desenvolvimento Web</a></p> <!-- Para redirecionar pra outra página, precisa colocar o nome do arquivo entre os "" -->
-                <p><a href="#logos">🎨 Logos Personalizados</a></p>
+            <ul class="servicos-list">
+                <a href="#des-web">🖥 Desenvolvimento Web</a> <!-- Para redirecionar pra outra página, precisa colocar o nome do arquivo entre os "" -->
+                <a href="#logos">🎨 Logos Personalizados</a>
                 <a href="#des-graf">📱 Design Gráfico</a>
             </ul>
         </nav>
     </section>    
     <section id="depoimentos" class="depoimentos">
-         <h2><p>Depoimentos</p></h2>
+         <h2>Depoimentos</h2>
             <div class="depoimentos__depoimento depoimentos__depoimento--ativo">
                 <h4>Ivy Soares - ⭐⭐⭐⭐⭐</h4>
                 <p>Agência incrível! Atendeu todas as minhas necessidades para a melhoria do meu site, e de fato notei um resultado positivo na visualização e busca pelo meu negócio!</p>
@@ -89,28 +89,28 @@ Acreditamos que o design vai muito além da estética, ele é uma ferramenta cap
             </ul>
         </div> 
         <div class="servicos">
-                <section class="servico" id="des-web">
+                <section class="servicos__card" id="des-web">
                     <img src="DesenvWeb-.png" alt="Ilustração de desenvolvimento web" loading="lazy" width="800" height="800">
                     <h2>Desenvolvimento Web</h2>
                     <p>Sites responsivos e funcionais para apresentar sua marca em qualquer tela.</p>
                 </section>
 
-                <section class="servico" id="logos">
+                <section class="servicos__card" id="logos">
                     <img src="LogosPers.png" alt="Exemplo de logos personalizados" loading="lazy" width="800" height="800">
                     <h2>Logos Personalizados</h2>
                     <p>Identidades visuais pensadas para tornar sua marca reconhecível.</p>
                 </section>
 
-                <section class="servico" id="des-graf">
+                <section class="servicos__card" id="des-graf">
                     <img src="DesenvGraf-.png" alt="Ilustração de design gráfico" loading="lazy" width="800" height="800">
                     <h2>Design Gráfico</h2>
                     <p>Peças gráficas que comunicam a sua mensagem com criatividade.</p>
                 </section>
         </div>
 
-        <div id="orcamento" class="formulario">
+        <div id="orcamento" class="orcamento"> <!-- Formulário -->
                 <h2>Solicite um orçamento</h2>
-                <p></p>  
+                  
                 <form action="index.html" method="get">  
                 <p><label for="nome">Nome:</label>
                 <input type="text" id="nome" name="email" required></p>
@@ -119,10 +119,9 @@ Acreditamos que o design vai muito além da estética, ele é uma ferramenta cap
                 <input type="email" id="email" name="email" required></p>
 
                 <p><label for="msg">Mensagem:</label>
-                <textarea id="msg" name="message" cols="50" rows="3">
-                </textarea></p>
+                <textarea id="msg" name="message" cols="50" rows="3"></textarea></p>
 
-                <button class="botao-responsivo" type="submit">Enviar</button>
+                <button class="button-responsivo" type="submit">Enviar</button>
             </form>
         </div>
     </section>
