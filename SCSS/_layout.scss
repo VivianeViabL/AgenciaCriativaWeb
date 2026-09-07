@@ -1,0 +1,182 @@
+// estrutura geral da página: home, navbar etc - responsividade 
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+#sobre,
+#servicos,
+#depoimentos,
+#contato,
+#orcamento,
+#des-web,
+#logos,
+#des-graf {
+  scroll-margin-top: 6rem;
+}
+
+.navbar {
+    position: sticky; /* fixa */
+    top: 0;
+    z-index: 100; /* esse faz o menu superior sobrepor o banner (home) */
+    background-color: v.$cor-menu;
+    display: flex;
+    justify-content: center;
+    padding: 1.5px;   
+
+&__logo img {
+    width: 100px;
+    height: auto;
+    }
+
+&__list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    }
+
+&__link {
+    color: v.$cor-branca-texto;
+    padding: 2rem 2rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    }
+}
+/* Banner */
+.home{
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: v.$cor-branca-texto;
+    overflow: hidden; /* Impede que qualquer parte da imagem passe os limites do banner */
+    isolation: isolate;
+
+&__imagem { /* faz a imagem ficar posicionada sobre toda a área da seção .home */
+    position: absolute;
+    inset: 0;
+    z-index: -2; /* deixa a camada para trás do botão e do texto */
+}
+
+&__imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+&__botao-tema {
+    position: absolute; /* Com essa configuração, e os dois de baixo, faz manter o botão no topo direito, acima do banner */
+    top: 20px;
+    right: 20px;
+    color: v.$cor-botao-tema;
+    background-color: v.$cor-fundo-botao-tema;
+    box-shadow: 0px 0px 20px 5px rgba(0, 26, 255, 0.7); /* efeito de sombra em volta do botão Tema */
+    width: 5%;
+    padding: v.$raio-pequeno;  /* ------ */
+    border: none;
+    border-radius: v.$raio-pequeno;
+    font-size: 15px;
+    cursor: pointer;    
+}
+}
+.home::after { /* Cria uma camada escura no home (::after é uma "camada virtual") */
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.28); /* escureçe em 28% */
+}
+
+.home h1{
+    font-size: 3rem;
+}
+
+.home h2{
+    font-size: 2rem;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+}
+
+footer {
+    align-items: flex-end;
+    text-align: center;
+    padding: v.$espaco-pequeno;
+    margin-top: v.$espaco-mto-grande;
+    font-weight: bold;
+}
+
+/* CSS Grid - para estruturar os serviços */
+/*     display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;  */
+
+/* RESPONSIVIDADE */
+@include m.ate(v.$breakpoint-mobile) {
+
+.navbar {
+    flex-wrap: wrap;
+
+  &__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+    &__list a {
+        font-size: 13px;
+   }
+
+  &__link {
+    font-size: 13px;
+  }
+}
+  .home h1 {
+    font-size: 2.2rem;
+  }
+
+  .home h2 {
+    font-size: 1.5rem;
+  }
+
+    #sobre,
+    #servicos,
+    #depoimentos,
+    #contato,
+    #orcamento,
+    #des-web,
+    #logos,
+    #des-graf {
+    scroll-margin-top: 11rem;
+  }
+}
+
+@include m.entre(v.$breakpoint-mobile + 1px, v.$breakpoint-tablet) {
+  .home h1{
+        font-size:3rem;
+    }
+    .home h2{
+        font-size:2rem;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+
+    &__list {
+        gap: 25px;
+    }
+
+    &__list a {
+        font-size: 14px;
+    } 
+}
+}

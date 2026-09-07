@@ -1,0 +1,14 @@
+// estilos reutilizáveis - ex: espaçamentos padrão, botão básico -> @mixin centralizar
+
+/* Nos @media, ficam as definições apenas do que "quebra" quando a tela diminui */
+@mixin ate($largura) {
+    @media (max-width: $largura) {
+        @content;
+    }
+}
+
+@mixin entre($minimo, $maximo) {
+    @media (min-width: $minimo) and (max-width: $maximo) {
+        @content;
+    }
+}

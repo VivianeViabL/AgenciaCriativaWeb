@@ -1,0 +1,42 @@
+// O SASS é uma linguagem de extensão do CSS, onde contém recursos especiais como variáveis, mixins, funções e operações
+// "_etc" são os arquivos Partials (parciais)
+// estilos base como body, tipografia, reset
+@use 'variaveis' as v;
+
+* { /* Seletor global (*) */
+    padding: 0;
+    font-family: v.$fonte-principal;
+    box-sizing: border-box;
+}
+  
+html {
+    scroll-behavior: smooth; /* Rolagem suave */
+  }
+
+/* Flexbox */
+body {
+    background-color: v.$cor-fundo-pagina;
+    margin:0; /* Assim, "zera" as laterais e o topo  */
+    flex-direction: column; /* column, deixa na ordem certa o Header, Main e Footer */
+    min-height: 100vh;
+}
+
+body.dark {
+    background-color: v.$cor-fundo-dark;
+    color: v.$cor-branca-texto;
+}
+
+/* Barra de rolagem da página */
+body::-webkit-scrollbar {
+  width: 13px;               /* largura de toda a barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+  background: v.$cor-fundo-scroll;  /* cor do "fundo" da barra */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* cor do scroll */
+  border-radius: v.$raio-scroll;  
+  border: 3px solid rgb(151, 208, 255);  /* cor das bordas do scroll thumb */
+}
