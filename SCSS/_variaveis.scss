@@ -1,0 +1,31 @@
+// cores, espaçamentos, fontes
+$fonte-principal: Trebuchet MS, 'Constantia', monospace;
+
+$cor-menu: rgb(0, 4, 56); // nav
+$cor-branca-texto: white;
+$cor-fundo-pagina: rgb(45, 129, 255);
+$cor-fundo-dark: #1f1f1f; // tema
+$cor-botao-tema: rgb(0, 0, 87);
+$cor-fundo-scroll: rgb(0, 1, 78); // scroll (barrinha lateral)
+
+$cor-fundo-botao-tema: #a6a9d8;
+
+$cor-fundo-orcamento: rgba(127, 153, 202, 0.637);
+$cor-fundo-card: rgba(255, 255, 255, 0.18); // card dos depoimentos
+$cor-fundo-depoimento: rgba(255, 255, 255, 0.733);
+
+$espaco-pequeno: 8px;
+$espaco-medio: 16px;
+$espaco-grande: 24px;
+$espaco-extra-grande: 40px;
+$espaco-mto-grande: 50px;
+
+$raio-pequeno: 5px;
+$raio-medio: 10px;
+$raio-grande: 15px;
+$raio-scroll: 20px;
+$raio-botao: 100px;
+
+// RESPONSIVIDADE (@media)
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 900px;

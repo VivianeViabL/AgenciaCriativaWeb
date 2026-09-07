@@ -1,0 +1,153 @@
+// componentes como botões, cards, menus, depoimentos, formulário etc
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+.container-servicos { /* É aqui mesmo ??? */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+}
+
+.orcamento { /* formulário  */
+  background-color: v.$cor-fundo-orcamento;
+  margin: auto; /* faz ficar centralizado na página  */
+  justify-content: center;
+  margin-top: v.$espaco-extra-grande;
+  gap: v.$raio-grande; /* -----  */
+  padding: v.$espaco-mto-grande;
+  border-radius: v.$raio-medio;
+  width: 400px;
+  box-shadow: 0 0 v.$raio-medio rgba(0, 0, 0, 0.1);
+
+}
+
+.orcamento textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 5rem;
+    resize: vertical;
+}
+
+.sobre,
+.depoimentos {
+    padding: 70px v.$espaco-mto-grande;
+}
+
+.depoimentos__depoimento{
+    transition:opacity .8s ease;
+    opacity:0;
+    display:none; 
+    background-color: v.$cor-fundo-depoimento; /* transparencia */
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: v.$raio-grande;
+    box-shadow: 0px v.$raio-pequeno 20px rgba(0,0,0,0.15);
+    margin: auto; 
+}
+
+.depoimentos__depoimento--ativo{
+    opacity: 1;
+    display:block;
+}
+
+.servicos{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: v.$espaco-grande;
+    max-width: 1200px;
+    margin: v.$espaco-extra-grande auto;
+    padding: 0 v.$espaco-grande;
+
+&__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: v.$espaco-grande;
+    border-radius: 12px;
+    background-color: v.$cor-fundo-card;
+}
+
+&__card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background-color: v.$cor-branca-texto;
+    border-radius: v.$espaco-pequeno; /* ----- */
+}
+
+}
+/* Layouts Fluidos */
+
+.button__orcamento { /* Botão formulário */
+    width: 20%; /* Largura */
+    font-size: 1em; /* Tamanho da fonte relativo ao elemento pai */
+    padding: 0.5em 0.5em; /* Espaçamento relativo ao tamanho da fonte */
+    background: #3053ff;
+    background: radial-gradient(circle, rgba(48, 83, 255, 1) 0%, rgba(175, 221, 237, 1) 100%);
+    color: rgb(220, 245, 245);
+    cursor: pointer;
+    border: none;
+    border-radius: v.$raio-botao;
+}
+
+.contato{ 
+    margin-top: v.$espaco-extra-grande;
+}
+
+/* RESPONSIVIDADE */
+@include m.ate(v.$breakpoint-mobile) {
+    .container-servicos{  /* Seção de serviços */
+        gap: v.$espaco-medio;
+    }
+
+    .container-servicos nav ul,
+    .servicos {
+        display: grid;
+        grid-template-columns: 1fr;
+    } 
+  
+   .servicos {
+    grid-template-columns: 1fr;
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+    .sobre,
+    .depoimentos {
+        padding: v.$espaco-extra-grande 20px;
+    }
+
+    .depoimentos__depoimento,
+    .orcamento {
+        width: calc(100% - #{v.$espaco-medio * 2}); /* aqui o SASS calcula 16px x 2 = 32px */
+        padding: v.$espaco-grande;
+    }
+
+    .orcamento textarea {
+        width: 100%;
+    }
+
+    .button__orcamento,
+    .home__botao-tema {
+    width: auto;
+    }
+}
+
+@include m.entre(v.$breakpoint-mobile + 1px, v.$breakpoint-tablet) {
+  .servicos {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    padding: 0 32px;
+
+    &__card {
+        flex-direction: column;
+    }
+  }
+  .orcamento {
+    width: min(90%, 600px);
+  }
+}
